@@ -12,8 +12,8 @@ export default class Colors extends React.Component {
     this.props.dispatch({
       type: 'COLOR_UPDATE_POINTER',
       pointer: {
-        x: e.pageX,
-        y: e.pageY
+        x: e.clientX,
+        y: e.clientY
       }
     });
     e.preventDefault();
