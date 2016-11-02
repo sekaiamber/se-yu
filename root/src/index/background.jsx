@@ -63,7 +63,7 @@ export default class Background extends React.Component {
   // initAnime
   initAnime() {
     this.animations = [];
-    this.currentColor = "#FF6138";
+    this.currentColor = "#fffee9";
 
     anime({
       duration: Infinity,
@@ -82,17 +82,17 @@ export default class Background extends React.Component {
     var index = this.animations.indexOf(animation);
     if (index > -1) this.animations.splice(index, 1);
   }
-  anime(nextColor, pageX, pageY) {
+  anime(nextColor, clientX, clientY) {
     
     let currentColor = this.currentColor;
 
-    let targetR = calcPageFillRadius(this.canvasWidth, this.canvasHeight, pageX, pageY);
+    let targetR = calcPageFillRadius(this.canvasWidth, this.canvasHeight, clientX, clientY);
     let rippleSize = Math.min(200, (this.canvasWidth * .4));
     let minCoverDuration = 750;
     
     let pageFill = new Circle({
-      x: pageX,
-      y: pageY,
+      x: clientX,
+      y: clientY,
       r: 0,
       fill: nextColor
     });
@@ -108,8 +108,8 @@ export default class Background extends React.Component {
     });
     
     let ripple = new Circle({
-      x: pageX,
-      y: pageY,
+      x: clientX,
+      y: clientY,
       r: 0,
       fill: currentColor,
       stroke: {
@@ -128,16 +128,16 @@ export default class Background extends React.Component {
     });
     
     let particles = [];
-    for (var i=0; i<32; i++) {
-      var particle = new Circle({
-        x: pageX,
-        y: pageY,
+    for (let i=0; i<32; i++) {
+      let particle = new Circle({
+        x: clientX,
+        y: clientY,
         fill: currentColor,
         r: anime.random(24, 48)
       })
       particles.push(particle);
     }
-    var particlesAnimation = anime({
+    let particlesAnimation = anime({
       targets: particles,
       x: function(particle){
         return particle.x + anime.random(rippleSize, -rippleSize);

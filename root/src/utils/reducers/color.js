@@ -1,5 +1,5 @@
 // color
-import colors from './../data/colors'
+import colors from './../data/hsl_colors'
 
 const hex_colors = {};
 const name_colors = {};
