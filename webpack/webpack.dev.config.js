@@ -67,6 +67,9 @@ var config = {
     extensions: ['', '.js', '.json', '.jsx'],
     alias: {}
   },
+  externals: {
+    anime: "anime"
+  },
   devtool: 'eval-source-map',
   jshint: {
     "esnext": true
