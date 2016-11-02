@@ -80,7 +80,8 @@ var config = {
     'react-dom': "ReactDOM",
     lodash: "_",
     redux: "Redux",
-    'react-redux': "ReactRedux"
+    'react-redux': "ReactRedux",
+    anime: "anime"
   },
 };
 

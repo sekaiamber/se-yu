@@ -1,22 +1,22 @@
-var setTextActionCreator = function (text) {
+var setNameActionCreator = function (name) {
   return {
-    type: 'COLOR_SET_TEXT',
-    text: text
+    type: 'COLOR_SET_NAME',
+    name: name
   }
 }
 
-var setTextActionCreatorAsync = function (text) {
+var setNameActionCreatorAsync = function (name) {
   return (dispatch) => {
     setTimeout(function () {
       dispatch({
-        type: 'COLOR_SET_TEXT',
-        text: text
+        type: 'COLOR_SET_NAME',
+        name: name
       })
     }, 2000)
   } 
 }
 
 export default {
-  setTextActionCreator,
-  setTextActionCreatorAsync
+  setNameActionCreator,
+  setNameActionCreatorAsync
 }
