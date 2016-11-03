@@ -13,7 +13,7 @@ var config = {
   },
   output: {
     path: path.join(__dirname, '..', '/root/dist'),
-    filename: '[name].bundle.[hash].js',
+    filename: '[name].bundle.js',
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -31,8 +31,8 @@ var config = {
       minSizeReduce: 1.5,
       moveToParents: true
     }),
-    new CommonsChunkPlugin('vendors', 'vendors.[hash].js', Infinity),
-    new ExtractTextPlugin("[name].[hash].css"),
+    new CommonsChunkPlugin('vendors', 'vendors.js', Infinity),
+    new ExtractTextPlugin("[name].css"),
     new webpack.optimize.DedupePlugin(),
     new HtmlWebpackPlugin({
       template: './../templates/index.deploy.html',
