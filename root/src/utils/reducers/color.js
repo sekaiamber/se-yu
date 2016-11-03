@@ -12,7 +12,7 @@ for (let i = 0; i < colors.length; i++) {
 const defaultColor = {
   name: 'Chinese Colors',
   colors: colors,
-  current: colors[0],
+  current: colors[Math.floor(Math.random() * colors.length)],
   pointer: {
     x:0, y:0
   }

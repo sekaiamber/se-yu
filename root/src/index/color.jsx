@@ -13,7 +13,7 @@ export default class Color extends React.Component {
   }
   render() {
     let brightness = Math.max.apply(Math, this.props.RGB);
-    let className = "color " + (brightness > 180 ? 'light' : 'dark');
+    let className = "color " + (brightness > 150 ? 'light' : 'dark');
     return (
       <div className={className}
         onMouseDown={this.handleMouseDown.bind(this)}

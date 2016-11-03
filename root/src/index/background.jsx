@@ -63,7 +63,7 @@ export default class Background extends React.Component {
   // initAnime
   initAnime() {
     this.animations = [];
-    this.currentColor = "#fffee9";
+    this.currentColor = this.props.color.current.hex;
 
     anime({
       duration: Infinity,

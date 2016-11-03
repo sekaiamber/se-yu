@@ -4,13 +4,17 @@ require('./index.scss')
 
 import Background from './background'
 import Colors from './colors'
+import Console from './console'
 
 class Index extends React.Component {
   render() {
     return (
       <div id="workspace">
         <Background dispatch={this.props.dispatch} color={this.props.color} pointer={this.props.color.pointer}/>
-        <Colors dispatch={this.props.dispatch} color={this.props.color}/>
+        <div id="center">
+          <Colors dispatch={this.props.dispatch} color={this.props.color}/>
+          <Console color={this.props.color.current} />
+        </div>
       </div>
     )
   }
