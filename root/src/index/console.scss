@@ -1,0 +1,103 @@
+$colorWidth: 150px;
+$blockSize: 50px;
+
+#console {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  display: flex;
+  color: #fffee9;
+  // &.dark {
+  //   color: #fffee9;
+  //   .value .letter-slide .slide-transform {
+  //     color: #fffee9;
+  //   }
+  // }
+  .cmyk {
+    margin-bottom: 50px;
+  }
+  .color-chinese-name {
+    font-family:'lixukemaobixs6ce84e76a16df6';
+  }
+
+
+  // color channel
+  .color-channel {
+    margin: 10px;
+    width: $colorWidth;
+    height: $blockSize;
+    background: rgba(255,255,255, .2);
+    border-radius: 0;
+    transition: all ease-in-out .3s;
+    overflow: hidden;
+    box-shadow:2px 2px 3px #333;
+    position: relative;
+    &>div {
+      float: left;
+      transition: all ease-in-out .3s;
+    }
+    .bg {
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .name {
+      height: $blockSize;
+      width: $blockSize;
+      border-radius: 0;
+      line-height: $blockSize;
+      text-align: center;
+      font-size: 25px;
+    }
+    .value {
+      height: $blockSize;
+      width: $colorWidth - $blockSize;
+      text-align: right;
+      padding: 10px 20px;
+    }
+    &.hex {
+      .value {
+        padding: 10px 0;
+        text-align: center;
+        .letter {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  // letter slide
+  .letter-slide {
+    overflow: hidden;
+    display: inline-block;
+    .slide-transform {
+      transition: all ease-in-out .5s;
+    }
+    .letter {
+      height: 100%;
+      width: 100%;
+      font-size: 24px;
+    }
+
+    &.horizontal {
+      display: block;
+      .slide-transform {
+        white-space: nowrap;
+        transition: all ease-in-out 1s;
+      }
+      .letter {
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+  }
+  .color-chinese-name .letter {
+    font-size: 100px;
+  }
+  .color-pinyin .letter {
+    font-size: 24px;
+  }
+}

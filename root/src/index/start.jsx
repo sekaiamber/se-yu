@@ -7,4 +7,8 @@ const store = createStore();
 
 require('./../../assets/script/hidpi-canvas-polyfill')
 
+import colors from './../utils/data/colors'
+
+window.colors = colors;
+
 render(<Index store={store} />, document.getElementById("main"));

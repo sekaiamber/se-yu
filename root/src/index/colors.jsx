@@ -4,7 +4,7 @@ import Color from './color'
 require('./colors.scss');
 
 export default class Colors extends React.Component {
-  handleMouseDown(e, i) {
+  handleMouseDown(e, theme, i) {
     this.props.dispatch({
       type: 'COLOR_SET_COLOR',
       index: i
@@ -16,6 +16,10 @@ export default class Colors extends React.Component {
         y: e.clientY
       }
     });
+    this.props.dispatch({
+      type: 'COLOR_SET_THEME',
+      theme: theme
+    });
     e.preventDefault();
   }
   render() {
@@ -23,7 +27,7 @@ export default class Colors extends React.Component {
       <div id="colors">
         {this.props.color.colors.map((color, i) => 
           <Color key={i} {...color}
-            onChose={(e) => this.handleMouseDown(e, i)} 
+            onChose={(e, theme) => this.handleMouseDown(e, theme, i)} 
           />
         )}
       </div>
