@@ -9,7 +9,6 @@ var config = {
   context: path.join(__dirname, '..', '/root/src'),
   entry: {
     index: './index/start',
-    vendors: ['react', 'react-dom']
   },
   output: {
     path: path.join(__dirname, '..', '/root/dist'),
@@ -31,13 +30,12 @@ var config = {
       minSizeReduce: 1.5,
       moveToParents: true
     }),
-    new CommonsChunkPlugin('vendors', 'vendors.js', Infinity),
     new ExtractTextPlugin("[name].css"),
     new webpack.optimize.DedupePlugin(),
     new HtmlWebpackPlugin({
       template: './../templates/index.deploy.html',
       filename: 'index.html',
-      chunks: ['index', 'vendors'],
+      chunks: ['index'],
       inject: 'body',
       hash: true
     })
